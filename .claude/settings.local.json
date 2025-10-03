@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.figma.com)",
+      "Bash(cat:*)",
+      "Bash(git -C \"D:\\TeleWorld\" diff HEAD src/App.jsx)",
+      "Bash(npm run dev:*)",
+      "Read(//c/Users/shubh/OneDrive/Pictures/Screenshots/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
