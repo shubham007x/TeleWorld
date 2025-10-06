@@ -17,7 +17,7 @@ function Waitlist({ fadeInUp, staggerContainer }) {
     <section id="resources" className=" relative min-h-screen w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-black ">
       {/* Stars scattered at bottom */}
       <div
-        className="absolute bottom-25 left-0 right-30 h-[50%] pointer-events-none z-100"
+        className="absolute bottom-15 left-0 right-30 h-[50%] pointer-events-none z-100"
         style={{
           backgroundImage: `url(${stars})`,
           backgroundSize: "contains",
