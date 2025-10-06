@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/World2.png";
 import ProductsDropdown from "./ProductsDropdown";
 
@@ -33,18 +34,15 @@ function Navigation() {
         <div className="w-full  sm:px-2 md:px-2">
           <div className="flex justify-between items-center py-1 sm:py-2">
             {/* Logo */}
-            <div
-              className="flex items-center gap-2 cursor-pointer"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            >
+            <Link to="/" className="flex items-center gap-2 cursor-pointer">
               <img src={logo} alt="logo" className="h-7 w-7 sm:h-8 sm:w-8" />
               <span className="text-sm sm:text-base md:text-lg font-semibold whitespace-nowrap">TeleWorld</span>
-            </div>
+            </Link>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <div className="flex px-10 gap-2">
-                {["Products", "Pricing", "Resources", "FAQ"].map((item) => (
+                {["Products", "Pricing", "FAQ"].map((item) => (
                   <motion.a
                     key={item}
                     href={`#${item.toLowerCase()}`}
@@ -54,6 +52,14 @@ function Navigation() {
                     {item}
                   </motion.a>
                 ))}
+                <Link to="/waitlist">
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="text-gray-300 gap-4 hover:text-white transition-colors text-sm font-medium cursor-pointer"
+                  >
+                    Waitlist
+                  </motion.span>
+                </Link>
               </div>
               <div>
                 <motion.button
@@ -114,7 +120,7 @@ function Navigation() {
             className="fixed top-20 left-1/2 -translate-x-1/2 w-[95%] sm:w-80 md:hidden bg-black/80 backdrop-blur-lg border border-gray-800 rounded-2xl z-40"
           >
             <div className="px-4 py-4 space-y-3">
-              {["Products", "Pricing", "Resources", "FAQ"].map((item) => (
+              {["Products", "Pricing", "FAQ"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -124,6 +130,13 @@ function Navigation() {
                   {item}
                 </a>
               ))}
+              <Link
+                to="/waitlist"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-gray-300 hover:text-white transition-colors font-medium py-2"
+              >
+                Waitlist
+              </Link>
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="w-full px-6 py-2 bg-white text-black rounded-full font-medium text-sm mt-2"

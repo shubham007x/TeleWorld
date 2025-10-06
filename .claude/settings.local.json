@@ -6,7 +6,8 @@
       "Bash(git -C \"D:\\TeleWorld\" diff HEAD src/App.jsx)",
       "Bash(npm run dev:*)",
       "Read(//c/Users/shubh/OneDrive/Pictures/Screenshots/**)",
-      "Read(//c/Users/shubh/Downloads/**)"
+      "Read(//c/Users/shubh/Downloads/**)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []
