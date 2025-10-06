@@ -42,7 +42,14 @@ function Navigation() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <div className="flex px-10 gap-2">
-                {["Products", "Pricing", "FAQ"].map((item) => (
+                <motion.a
+                  href="#products"
+                  whileHover={{ scale: 1.05 }}
+                  className="text-gray-300 gap-4 hover:text-white transition-colors text-sm font-medium"
+                >
+                  Products
+                </motion.a>
+                {["Pricing", "FAQ"].map((item) => (
                   <motion.a
                     key={item}
                     href={`#${item.toLowerCase()}`}
@@ -52,14 +59,13 @@ function Navigation() {
                     {item}
                   </motion.a>
                 ))}
-                <Link to="/waitlist">
-                  <motion.span
-                    whileHover={{ scale: 1.05 }}
-                    className="text-gray-300 gap-4 hover:text-white transition-colors text-sm font-medium cursor-pointer"
-                  >
-                    Waitlist
-                  </motion.span>
-                </Link>
+                <motion.span
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-gray-300 gap-4 hover:text-white transition-colors text-sm font-medium cursor-pointer"
+                >
+                  Resources
+                </motion.span>
               </div>
               <div>
                 <motion.button
@@ -120,7 +126,14 @@ function Navigation() {
             className="fixed top-20 left-1/2 -translate-x-1/2 w-[95%] sm:w-80 md:hidden bg-black/80 backdrop-blur-lg border border-gray-800 rounded-2xl z-40"
           >
             <div className="px-4 py-4 space-y-3">
-              {["Products", "Pricing", "FAQ"].map((item) => (
+              <a
+                href="#products"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-gray-300 hover:text-white transition-colors font-medium py-2"
+              >
+                Products
+              </a>
+              {["Pricing", "FAQ"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -130,13 +143,15 @@ function Navigation() {
                   {item}
                 </a>
               ))}
-              <Link
-                to="/waitlist"
-                onClick={() => setIsMenuOpen(false)}
-                className="block text-gray-300 hover:text-white transition-colors font-medium py-2"
+              <span
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsDropdownOpen(!isDropdownOpen);
+                }}
+                className="block text-gray-300 hover:text-white transition-colors font-medium py-2 cursor-pointer"
               >
-                Waitlist
-              </Link>
+                Resources
+              </span>
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="w-full px-6 py-2 bg-white text-black rounded-full font-medium text-sm mt-2"

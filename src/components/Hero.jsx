@@ -61,8 +61,7 @@ function Hero({ fadeInUp, staggerContainer }) {
       <motion.div
         variants={staggerContainer}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        animate="visible"
         className="flex flex-col items-center max-w-6xl z-10 text-center w-full gap-8"
       >
         {/* Top Badge */}

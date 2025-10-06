@@ -42,8 +42,7 @@ function Waitlist({ fadeInUp, staggerContainer }) {
       <motion.div
         variants={staggerContainer}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        animate="visible"
         className="flex flex-col items-center max-w-4xl z-40 text-center w-full gap-6 "
       >
         {/* Waitlist Badge */}
