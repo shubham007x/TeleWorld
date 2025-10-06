@@ -82,7 +82,7 @@ function Waitlist({ fadeInUp, staggerContainer }) {
         <motion.form
           variants={fadeInUp}
           onSubmit={handleSubmit}
-          className="mt-2 w-full max-w-md px-4"
+          className="mt-2 w-fit max-w-md px-4"
         >
           <div className="flex items-center gap-1 bg-black border border-gray-800 rounded-xl px-4 py-1">
             <input

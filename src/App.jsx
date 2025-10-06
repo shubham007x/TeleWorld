@@ -14,18 +14,27 @@ function ScrollToTop() {
   return null;
 }
 
+function Layout() {
+  const location = useLocation();
+  const showNavAndFooter = location.pathname !== "/waitlist";
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {showNavAndFooter && <Navigation />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/waitlist" element={<WaitlistPage />} />
+      </Routes>
+      {showNavAndFooter && <Footer />}
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-black text-white">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/waitlist" element={<WaitlistPage />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Layout />
     </Router>
   );
 }
