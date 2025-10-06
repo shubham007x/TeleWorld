@@ -14,7 +14,10 @@ function Waitlist({ fadeInUp, staggerContainer }) {
   };
 
   return (
-    <section id="resources" className=" relative min-h-screen w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-black ">
+    <section
+      id="resources"
+      className=" relative min-h-screen w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-black "
+    >
       {/* Stars scattered at bottom */}
       <div
         className="absolute bottom-15 left-0 right-30 h-[50%] pointer-events-none z-100"
@@ -28,7 +31,7 @@ function Waitlist({ fadeInUp, staggerContainer }) {
       />
       {/* <div class="backdrop-blur-xl bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-2xl border border-white/20 p-6 shadow-lg"></div> */}
       {/* Blur overlay on background image */}
-      <div className="absolute sm:bottom-14  left-0 right-0 h-[50%] pointer-events-none bg-black/10 backdrop-blur-xl  z-20 opacity-80" />
+      <div className="absolute sm:bottom-12  left-0 right-0 h-[50%] pointer-events-none bg-black/10 backdrop-blur-xl  z-20 opacity-80" />
       <div
         className="absolute bottom-0  left-0 right-0 h-[50%] pointer-events-none backdrop-blur-xs z-10"
         style={{
@@ -38,17 +41,23 @@ function Waitlist({ fadeInUp, staggerContainer }) {
           backgroundRepeat: "no-repeat",
         }}
       />
-
+      <div
+        className="absolute  bottom-11 z-30 left-0 right-0 h-[50%]  sm:h-12  md:h-36 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center bottom, rgba(255, 255, 255, 255) 0%, rgba(255, 255, 255, 0.2) 5%, transparent 15%)",
+        }}
+      ></div>
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-center max-w-4xl z-40 text-center w-full gap-6 "
+        className="flex flex-col items-center max-w-4xl z-40 text-center w-full gap-3 "
       >
         {/* Waitlist Badge */}
         <motion.div
           variants={fadeInUp}
-          className="text-xs backdrop-blur-xl bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-full border border-white/20 px-6 py-1 shadow-lg"
+          className="text-[8px]  text-[#F0F0F0] bg-gradient-to-br from-white/20 via-black/10 to-transparent rounded-full border border-white/20 px-4 py-0.5 shadow-lg"
         >
           Waitlist
         </motion.div>
@@ -69,7 +78,7 @@ function Waitlist({ fadeInUp, staggerContainer }) {
         {/* Subheading */}
         <motion.p
           variants={fadeInUp}
-          className="text-sm   md:text-sm text-[#9D9D9D] max-w-2xl  leading-tight m-auto px-4"
+          className="text-xs   md:text-xs text-[#9D9D9D] max-w-xl  leading-tight px-10"
         >
           "TeleWorld is The #1 Platform For Telegram Advertising,
           <br className="hidden sm:block" />
@@ -82,20 +91,20 @@ function Waitlist({ fadeInUp, staggerContainer }) {
         <motion.form
           variants={fadeInUp}
           onSubmit={handleSubmit}
-          className="mt-2 w-fit max-w-md px-2"
+          className="mt-2  max-w-xsm "
         >
-          <div className="flex items-center gap-1 bg-black border border-gray-800 rounded-xl px-2 py-1">
+          <div className="flex items-center gap-4 bg-gradient-to-br from-white/20 via-black/20 to-transparent border border-gray-800 rounded-lg px-1 py-1">
             <input
               type="email"
               placeholder="Your Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="flex-1 bg-transparent text-white text-sm placeholder-gray-500 focus:outline-none"
+              className="flex-1  px-2 bg-transparent text-white text-xs placeholder-gray-500 placeholder:text-[8px]  focus:outline-none"
             />
             <button
               type="submit"
-              className="rounded-xl px-6 py-2 bg-[#047BC4] hover:bg-cyan-600 text-white text-sm font-medium rounded- transition-colors whitespace-nowrap"
+              className="rounded-md px-3 py-1 bg-[#047BC4] hover:bg-cyan-600 text-white text-[8px] font-extralight  transition-colors whitespace-nowrap"
             >
               Get Notified
             </button>
@@ -105,7 +114,7 @@ function Waitlist({ fadeInUp, staggerContainer }) {
         {/* Counter */}
         <motion.p
           variants={fadeInUp}
-          className="flex items-center gap-2 text-sm text-gray-300"
+          className="flex items-center gap-1 text-[8px] text-gray-300 px-2"
         >
           <span className="w-2.5 h-2.5 bg-cyan-500 rounded-full animate-pulse" />
           Join {count.toLocaleString()} others already on the waitlist!
