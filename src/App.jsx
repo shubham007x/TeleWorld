@@ -9,6 +9,7 @@ import {
   Testimonials,
   FAQ,
   CTA,
+  Waitlist,
   Footer,
 } from "./components";
 
@@ -82,6 +83,7 @@ function App() {
       />
       <FAQ fadeInUp={fadeInUp} />
       <CTA fadeInUp={fadeInUp} staggerContainer={staggerContainer} />
+      <Waitlist fadeInUp={fadeInUp} staggerContainer={staggerContainer} />
       <Footer />
     </div>
   );
