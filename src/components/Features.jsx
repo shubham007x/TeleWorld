@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import world from "../assets/world.png";
 // Import your feature mockup images here
-import channelDiscovery from "../assets/i1.svg";
-import manageAccounts from "../assets/i2.svg";
-import postScheduling from "../assets/i3.svg";
-import manageRatelimits from "../assets/i4.svg";
+import channelDiscovery from "../assets/i1.png";
+import manageAccounts from "../assets/i2.png";
+import postScheduling from "../assets/i3.png";
+import manageRatelimits from "../assets/i4.png";
 import { Verified, Search, Group, BarChart } from "@mui/icons-material";
 
 const fadeInUp = {
