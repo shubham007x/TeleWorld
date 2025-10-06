@@ -99,7 +99,7 @@ function Waitlist({ fadeInUp, staggerContainer }) {
             />
             <button
               type="submit"
-              className="rounded-md px-3 py-1 bg-[#047BC4] hover:bg-cyan-600 text-white text-[8px] font-extralight  transition-colors whitespace-nowrap"
+              className="rounded-md px-3 py-1 bg-[#047BC4] hover:bg-cyan-600 text-white text-[6.5px]   transition-colors whitespace-nowrap"
             >
               Get Notified
             </button>
