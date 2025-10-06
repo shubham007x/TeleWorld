@@ -19,8 +19,8 @@ function Waitlist({ fadeInUp, staggerContainer }) {
       className=" relative min-h-screen w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-black "
     >
       {/* Stars scattered at bottom */}
-      <div
-        className="absolute bottom-15 left-0 right-30 h-[50%] pointer-events-none z-100"
+      {/* <div
+        className="absolute bottom-15 left-0 right-30 h-[20%] pointer-events-none z-25"
         style={{
           backgroundImage: `url(${stars})`,
           backgroundSize: "contains",
@@ -28,26 +28,21 @@ function Waitlist({ fadeInUp, staggerContainer }) {
           backgroundRepeat: "no-repeat",
           opacity: 0.6,
         }}
-      />
-      {/* <div class="backdrop-blur-xl bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-2xl border border-white/20 p-6 shadow-lg"></div> */}
+      /> */}
+    
       {/* Blur overlay on background image */}
-      <div className="absolute sm:bottom-12  left-0 right-0 h-[50%] pointer-events-none bg-black/10 backdrop-blur-xl  z-20 opacity-80" />
+
       <div
-        className="absolute bottom-0  left-0 right-0 h-[50%] pointer-events-none backdrop-blur-xs z-10"
+        className="absolute bottom-0  left-0 right-0 h-[50%] pointer-events-none backdrop-blur-2xl  z-10"
         style={{
           backgroundImage: `url(${background})`,
           backgroundSize: "contain",
           backgroundPosition: "bottom center",
           backgroundRepeat: "no-repeat",
+ 
         }}
       />
-      <div
-        className="absolute  bottom-11 z-30 left-0 right-0 h-[50%]  sm:h-12  md:h-36 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at center bottom, rgba(255, 255, 255, 255) 0%, rgba(255, 255, 255, 0.2) 5%, transparent 15%)",
-        }}
-      ></div>
+    
       <motion.div
         variants={staggerContainer}
         initial="hidden"
